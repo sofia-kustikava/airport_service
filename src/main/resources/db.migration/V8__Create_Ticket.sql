@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS airport_db.public.Ticket
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
     CONSTRAINT user_id FOREIGN KEY (user_id)
-        REFERENCES airport_db.public."user" (id) MATCH SIMPLE
+        REFERENCES airport_db.public.Users (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 );

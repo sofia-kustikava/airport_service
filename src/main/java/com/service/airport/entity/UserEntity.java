@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "User")
+@Table(name = "Users")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +42,7 @@ public class UserEntity {
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
-    private List<RoleEntity> roles = new ArrayList<>();
+    private List<RoleEntity> roles;
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<TicketEntity> tickets;
